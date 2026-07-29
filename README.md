@@ -1,15 +1,8 @@
-# FLYHOUSE Ambassadors
+# FLYHOUSE Ambassadors — Etapa 1
 
-Landing gratuita para compartir propiedades de FLYHOUSE con códigos de referido.
-
-## Uso
-
-Abre la web agregando el parámetro del embajador:
-
-`?ref=azure`
-
-Ejemplo:
-
-`https://tu-dominio.vercel.app/?ref=azure`
-
-Los botones de WhatsApp generan automáticamente un mensaje con el código del embajador.
+Versión gratuita con:
+- Embajador autorizado: Jozef Jauregui
+- Código FLY-JOZEF-001
+- Comisión comercial acordada: 10% por reserva confirmada
+- Galería completa de Las Terrazas, Naplo
+- Botón dinámico de WhatsApp con referido

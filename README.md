@@ -1,8 +1,9 @@
-# FLYHOUSE Ambassadors — Etapa 1
+# Embajadores FLYHOUSE — Etapa 1 v1.2
 
-Versión gratuita con:
-- Embajador autorizado: Jozef Jauregui
-- Código FLY-JOZEF-001
-- Comisión comercial acordada: 10% por reserva confirmada
-- Galería completa de Las Terrazas, Naplo
-- Botón dinámico de WhatsApp con referido
+Versión premium de Las Terrazas · Naplo con:
+- galería estilo hotel boutique
+- visor completo de 13 fotografías
+- navegación anterior/siguiente
+- animaciones suaves
+- referido de Jozef Jauregui
+- botón flotante de WhatsApp

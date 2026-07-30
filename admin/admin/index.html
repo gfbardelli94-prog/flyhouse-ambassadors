@@ -18,16 +18,15 @@
       <button class="nav-item" data-view="reservas">▣ <span>Reservas</span></button>
       <button class="nav-item" data-view="embajadores">◎ <span>Embajadores</span></button>
       <button class="nav-item" data-view="propiedades">◇ <span>Propiedades</span></button>
-      <button class="nav-item" data-view="comisiones">$ <span>Comisiones</span></button>
     </nav>
-    <div class="sidebar-footer"><small>FLYHOUSE OS® v1.1</small><a href="../index.html">Ver landing ↗</a></div>
+    <div class="sidebar-footer"><small>FLYHOUSE® v1.0</small><a href="../index.html">Ver landing ↗</a></div>
   </aside>
 
   <main class="app-shell">
     <header class="topbar">
       <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú">☰</button>
       <div><p class="eyebrow">PANEL ADMINISTRATIVO</p><h1 id="pageTitle">Dashboard</h1></div>
-      <div class="top-actions"><button class="ghost-btn" id="exportData">Exportar datos</button><button class="primary-btn" id="newReservation">+ Nueva reserva</button></div>
+      <button class="primary-btn" id="newReservation">+ Nueva reserva</button>
     </header>
 
     <section id="dashboard" class="view active">
@@ -84,21 +83,6 @@
         <article class="property-card muted-card"><img src="../assets/qunchu.png" alt="QUNCHU"><div><span class="status">Próximamente</span><p class="eyebrow">CANOAS DE PUNTA SAL</p><h3>QUNCHU</h3><p>Propiedad pendiente de publicación.</p></div></article>
         <article class="property-card muted-card"><img src="../assets/gema.png" alt="GEMA"><div><span class="status">Próximamente</span><p class="eyebrow">EXPERIENCIA FLYHOUSE</p><h3>GEMA</h3><p>Propiedad pendiente de publicación.</p></div></article>
       </div>
-    </section>
-
-    <section id="comisiones" class="view">
-      <div class="commission-summary">
-        <article class="stat-card"><span>Comisión generada</span><strong id="commissionGenerated">S/ 0</strong><small>reservas confirmadas</small></article>
-        <article class="stat-card"><span>Pendiente de pago</span><strong id="commissionPending">S/ 0</strong><small>por liquidar</small></article>
-        <article class="stat-card"><span>Comisión pagada</span><strong id="commissionPaid">S/ 0</strong><small>liquidada</small></article>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Reserva</th><th>Embajador</th><th>Venta</th><th>Comisión</th><th>Pago</th><th>Acción</th></tr></thead>
-          <tbody id="commissionTable"></tbody>
-        </table>
-      </div>
-      <div id="commissionEmpty" class="empty-state">No hay comisiones generadas todavía.</div>
     </section>
   </main>
 

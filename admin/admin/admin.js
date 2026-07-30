@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'flyhouse_reservations_v1';
 const seed = [
-  {id:1,client:'María Torres',phone:'',property:'Las Terrazas · Naplo',ambassador:'Jozef Jauregui',checkin:'2026-08-15',checkout:'2026-08-17',amount:1800,status:'Confirmada',commissionPaid:false,notes:'Reserva de ejemplo'},
+  {id:1,client:'María Torres',phone:'',property:'Las Terrazas · Naplo',ambassador:'Jozef Jauregui',checkin:'2026-08-15',checkout:'2026-08-17',amount:1800,status:'Confirmada',notes:'Reserva de ejemplo'},
   {id:2,client:'Carlos Mendoza',phone:'',property:'Las Terrazas · Naplo',ambassador:'Jozef Jauregui',checkin:'2026-08-22',checkout:'2026-08-24',amount:1600,status:'Pendiente',notes:'Reserva de ejemplo'},
   {id:3,client:'Lucía Ramos',phone:'',property:'Las Terrazas · Naplo',ambassador:'Venta directa',checkin:'2026-09-05',checkout:'2026-09-07',amount:1750,status:'Consulta',notes:'Reserva de ejemplo'}
 ];
@@ -18,9 +18,7 @@ document.getElementById('menuToggle').addEventListener('click',()=>document.getE
 
 document.getElementById('todayLabel').textContent = new Intl.DateTimeFormat('es-PE',{day:'numeric',month:'long',year:'numeric'}).format(new Date());
 
-function normalizeReservations(){ reservations=reservations.map(r=>({...r,commissionPaid:Boolean(r.commissionPaid)})); }
 function render(){
-  normalizeReservations();
   const confirmed = reservations.filter(r=>r.status==='Confirmada');
   const revenue = confirmed.reduce((s,r)=>s+Number(r.amount),0);
   const commission = confirmed.reduce((s,r)=>s+commissionOf(r),0);
@@ -34,7 +32,7 @@ function render(){
   ['jozefReservations','ambReservations'].forEach(id=>document.getElementById(id).textContent=jozef.length);
   ['jozefCommission','ambCommission'].forEach(id=>document.getElementById(id).textContent=money(jozefCommission));
   document.getElementById('ambSales').textContent=money(jozefRevenue);
-  renderRecent(); renderTable(); renderCommissions();
+  renderRecent(); renderTable();
 }
 function renderRecent(){
   const el=document.getElementById('recentReservations');
@@ -59,28 +57,3 @@ document.getElementById('reservationForm').addEventListener('submit',e=>{e.preve
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);showToast('Enlace copiado');}catch{showToast('Copia el enlace desde la barra del navegador');}}));
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
 save();render();
-
-
-function renderCommissions(){
-  const rows=reservations.filter(r=>commissionOf(r)>0);
-  const generated=rows.reduce((s,r)=>s+commissionOf(r),0);
-  const paid=rows.filter(r=>r.commissionPaid).reduce((s,r)=>s+commissionOf(r),0);
-  const pending=generated-paid;
-  document.getElementById('commissionGenerated').textContent=money(generated);
-  document.getElementById('commissionPaid').textContent=money(paid);
-  document.getElementById('commissionPending').textContent=money(pending);
-  document.getElementById('statPending').textContent=money(pending);
-  const body=document.getElementById('commissionTable');
-  body.innerHTML=rows.map(r=>`<tr><td><strong>${escapeHtml(r.client)}</strong><br><small>${escapeHtml(r.property)}</small></td><td>${escapeHtml(r.ambassador)}</td><td>${money(r.amount)}</td><td>${money(commissionOf(r))}</td><td>${r.commissionPaid?'<span class="paid-label">Pagada</span>':'<span class="pending-label">Pendiente</span>'}</td><td>${r.commissionPaid?'<button class="pay-btn" data-unpay="'+r.id+'">Marcar pendiente</button>':'<button class="pay-btn" data-pay="'+r.id+'">Marcar pagada</button>'}</td></tr>`).join('');
-  document.getElementById('commissionEmpty').style.display=rows.length?'none':'block';
-  document.querySelectorAll('[data-pay]').forEach(b=>b.addEventListener('click',()=>{const r=reservations.find(x=>x.id===Number(b.dataset.pay));if(r){r.commissionPaid=true;save();render();showToast('Comisión marcada como pagada');}}));
-  document.querySelectorAll('[data-unpay]').forEach(b=>b.addEventListener('click',()=>{const r=reservations.find(x=>x.id===Number(b.dataset.unpay));if(r){r.commissionPaid=false;save();render();showToast('Comisión marcada como pendiente');}}));
-}
-
-document.getElementById('exportData').addEventListener('click',()=>{
-  const payload={exportedAt:new Date().toISOString(),reservations};
-  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');a.href=url;a.download='flyhouse-reservas-backup.json';a.click();URL.revokeObjectURL(url);
-  showToast('Copia de seguridad descargada');
-});

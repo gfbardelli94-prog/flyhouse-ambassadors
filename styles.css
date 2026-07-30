@@ -16,3 +16,29 @@ dialog{width:min(1100px,94vw);border:0;border-radius:18px;padding:12px;backgroun
 footer{background:#171512;color:#fff;text-align:center;padding:46px 22px}footer img{width:170px;margin:0 auto 18px;border-radius:12px}footer p{margin:0 0 8px}footer small{color:#aaa39a}
 @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}.detail-columns{grid-template-columns:1fr}.experience-grid{grid-template-columns:1fr 1fr}.booking-panel{align-items:flex-start;flex-direction:column}.booking-actions{width:100%;min-width:0}}
 @media(max-width:560px){.hero{min-height:88vh}.brand-logo{width:210px}.property-detail{padding:68px 14px}.gallery-grid{grid-auto-rows:170px;gap:7px}.gallery-item:first-child{grid-column:span 2;grid-row:span 1}.story-card,.feature-card{padding:26px}.feature-list{grid-template-columns:1fr}.experience-grid{grid-template-columns:1fr}.booking-panel{padding:28px}.quick-facts{justify-content:flex-start}.detail-intro{text-align:left}}
+
+
+/* Floating WhatsApp CTA */
+.floating-wa{
+position:fixed;right:20px;bottom:20px;z-index:9999;
+display:flex;align-items:center;gap:12px;
+background:#25D366;color:#fff;text-decoration:none;
+padding:14px 18px;border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+font-weight:600;
+animation:pulse 2.8s infinite;
+transition:.3s;
+}
+.floating-wa:hover{transform:translateY(-3px) scale(1.02);}
+.floating-wa small{display:block;font-size:.72rem;opacity:.9;font-weight:400}
+.floating-wa .icon{font-size:28px}
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.05)}
+}
+@media(max-width:768px){
+.floating-wa{
+left:12px;right:12px;bottom:12px;border-radius:16px;
+justify-content:center;
+}
+}

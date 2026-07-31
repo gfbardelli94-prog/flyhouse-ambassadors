@@ -49,6 +49,24 @@ gema: [
   ["assets/gema/gema-08.webp", "Acceso exterior GEMA"],
   ["assets/gema/gema-09.webp", "Ingreso y recepción"],
   ["assets/gema/gema-10.webp", "Oficina y atención personalizada"]
+],
+qunchu: [
+  ["assets/qunchu/qunchu-01.webp", "Piscina frente al mar al atardecer"],
+  ["assets/qunchu/qunchu-02.webp", "Terraza principal frente al océano"],
+  ["assets/qunchu/qunchu-03.webp", "Sala con vista panorámica al mar"],
+  ["assets/qunchu/qunchu-04.webp", "Sala interior y detalles de bienvenida"],
+  ["assets/qunchu/qunchu-05.webp", "Cocina equipada con vista al océano"],
+  ["assets/qunchu/qunchu-06.webp", "Cocina y barra para compartir"],
+  ["assets/qunchu/qunchu-07.webp", "Barra central y ambientes integrados"],
+  ["assets/qunchu/qunchu-08.webp", "Sala principal de inspiración marina"],
+  ["assets/qunchu/qunchu-09.webp", "Sala lounge de QUNCHU"],
+  ["assets/qunchu/qunchu-10.webp", "Piscina iluminada durante la noche"],
+  ["assets/qunchu/qunchu-11.webp", "Zona de juegos y entretenimiento"],
+  ["assets/qunchu/qunchu-12.webp", "Dormitorio familiar"],
+  ["assets/qunchu/qunchu-13.webp", "Dormitorio con camarote"],
+  ["assets/qunchu/qunchu-14.webp", "Baño equipado con detalles naturales"],
+  ["assets/qunchu/qunchu-15.webp", "Acceso privado hacia la playa"],
+  ["assets/qunchu/qunchu-16.webp", "Ingreso y detalles de hospitalidad"]
 ]};
 
 const dialog = document.getElementById("lightbox");

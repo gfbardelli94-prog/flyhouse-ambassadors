@@ -1,9 +1,10 @@
-# Embajadores FLYHOUSE — Etapa 1 v1.2
+# FLYHOUSE — Web pública v2.1
 
-Versión premium de Las Terrazas · Naplo con:
-- galería estilo hotel boutique
-- visor completo de 13 fotografías
-- navegación anterior/siguiente
-- animaciones suaves
-- referido de Jozef Jauregui
-- botón flotante de WhatsApp
+Versión premium con:
+- Las Terrazas · Naplo publicada con galería de 13 fotografías
+- GEMA · Event House publicada con descripción, atributos y galería de 10 fotografías
+- QUNCHU anunciada como próxima experiencia
+- galerías estilo hotel boutique con visor completo y navegación
+- enlaces de consulta por propiedad mediante WhatsApp
+- reconocimiento del referido de Jozef Jauregui
+- panel administrativo inicial
